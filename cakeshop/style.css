@@ -1,0 +1,87 @@
+/* 全体のスタイル */
+body {
+    background-color: #ffc0cb; /* 背景色を指定 */
+    font-family: 'Helvetica', 'Arial', 'Hiragino Sans', 'メイリオ', 'Meiryo', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* ヘッダー */
+header {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.logo {
+    max-width: 150px;
+    height: auto;
+}
+
+/* メインコンテンツ */
+main {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* セクション共通のタイトル */
+.section-title {
+    color: #800000; /* タイトルの文字色を指定 */
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 30px;
+}
+
+/* 当店について */
+.about {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 30px;
+    border-radius: 10px;
+    margin-bottom: 40px;
+}
+
+.about-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.about p {
+    line-height: 1.8;
+}
+
+/* 商品紹介 */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.product-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* 角丸を画像にも適用させるため */
+    text-align: center;
+    padding-bottom: 15px;
+}
+
+.product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; /* 画像の比率を保ったままトリミング */
+}
+
+.product-card h3 {
+    margin: 15px 0 10px;
+    color: #d14a82;
+}
+
+.product-card p {
+    padding: 0 15px;
+    font-size: 0.9em;
+    line-height: 1.6;
+}
