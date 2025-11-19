@@ -1,0 +1,450 @@
+:root {
+    --main-color: #D98C00;
+    --sub-color: #593E1A;
+    --accent-color: #8C1B1B;
+    --text-color: #333333;
+    --bg-color: #FCFCF5;
+    --footer-bg: #222222;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.8;
+}
+
+h1, h2, h3, h4 {
+    color: var(--sub-color);
+    font-family: "Yu Mincho", "Hiragino Mincho ProN", "Times New Roman", serif;
+    margin-bottom: 0.8em;
+    letter-spacing: 0.05em;
+}
+
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+a:hover {
+    opacity: 0.8;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: bottom;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.button {
+    display: inline-block;
+    background: linear-gradient(to bottom, var(--accent-color), #600e0e);
+    color: #FFFFFF;
+    padding: 14px 40px;
+    border-radius: 50px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+    box-shadow: 0 5px 15px rgba(140, 27, 27, 0.3);
+    letter-spacing: 0.1em;
+    border: 1px solid rgba(255,255,255,0.2);
+}
+.button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(140, 27, 27, 0.4);
+    color: #fff;
+}
+
+header {
+    background-color: rgba(34, 34, 34, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 4px solid var(--main-color);
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo h1 {
+    margin: 0;
+    line-height: 1;
+    font-size: 1.5rem;
+}
+
+header .logo img {
+    max-height: 50px;
+    width: auto;
+    transition: transform 0.3s;
+}
+header .logo img:hover {
+    transform: scale(1.05);
+}
+
+header nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+header nav li {
+    margin-left: 25px;
+}
+
+header nav a {
+    color: #FFFFFF;
+    font-weight: bold;
+    display: block;
+    padding: 5px 0;
+    position: relative;
+    font-size: 0.95rem;
+    font-family: sans-serif;
+}
+
+header nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--main-color);
+    transition: width 0.3s;
+}
+header nav a:hover {
+    color: var(--main-color);
+}
+header nav a:hover::after {
+    width: 100%;
+}
+
+main {
+    padding: 40px 0;
+}
+
+main section {
+    margin-bottom: 80px;
+}
+
+main h2 {
+    text-align: center;
+    font-size: 32px;
+    border-bottom: none;
+    display: block;
+    margin-bottom: 40px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+main h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: var(--main-color);
+    margin: 15px auto 0;
+}
+
+.page-subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 50px;
+    font-weight: normal;
+    font-family: "Yu Mincho", serif;
+}
+
+.hero {
+    background: transparent;
+    box-shadow: none;
+    padding: 60px 20px 40px;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.hero::before {
+    content: none;
+}
+
+.hero-catchphrase {
+    font-size: 28px;
+    color: var(--sub-color);
+    margin-bottom: 40px;
+    border: none;
+    padding: 0;
+}
+.hero-catchphrase::after {
+    content: none;
+}
+
+.hero-description {
+    font-family: "Yu Mincho", serif;
+    font-size: 1.1em;
+    line-height: 2.2;
+    color: #555;
+    margin-bottom: 40px;
+}
+
+.hero-sub {
+    font-family: "Yu Mincho", serif;
+    font-size: 1.4em;
+    line-height: 1.8;
+    color: var(--accent-color);
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+.media-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-top: 40px;
+    align-items: center;
+}
+
+.media-item video,
+.media-item img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.media-item:hover video,
+.media-item:hover img {
+    transform: scale(1.02);
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+}
+
+/* 修正箇所: last-childではなく、特定のクラス(highlight-item)を持つ要素だけを中央寄せにする */
+/* これにより、メニューページの生ハムやアクセスページの写真がずれる問題を解消 */
+.feature-grid .feature-item.highlight-item {
+    grid-column: span 2;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.feature-item {
+    border: none;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.feature-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.feature-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.feature-item h4,
+.feature-item p {
+    padding: 15px 25px;
+}
+.feature-item h4 {
+    color: var(--sub-color);
+    margin-bottom: 0;
+    border-left: 4px solid var(--main-color);
+    padding-left: 15px;
+    margin-left: 25px;
+    margin-top: 15px;
+}
+
+.access-summary .access-content {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    border: 1px solid #eee;
+}
+
+.access-summary .access-content img {
+    width: 50%;
+    border-radius: 8px;
+}
+
+.access-summary .access-text {
+    width: 50%;
+}
+
+.access-text .shop-name {
+    font-size: 1.5em;
+    color: var(--main-color);
+    border-bottom: 2px solid var(--main-color);
+    display: inline-block;
+    margin-bottom: 15px;
+    font-family: "Yu Mincho", serif;
+}
+
+.concept-item {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    padding-bottom: 50px;
+    margin-bottom: 50px;
+    border-bottom: 1px solid #e0e0e0;
+}
+.concept-item:last-child {
+    border-bottom: none;
+}
+.concept-item .concept-image {
+    width: 45%;
+}
+.concept-item .concept-image img {
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+.concept-item .concept-text {
+    width: 55%;
+}
+.concept-item.item-reverse {
+    flex-direction: row-reverse;
+}
+
+.menu-course {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 12px;
+    border: none;
+    border-top: 6px solid var(--main-color);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+.menu-course h3 {
+    color: var(--main-color);
+}
+.menu-course ul {
+    list-style: none;
+    padding: 0;
+}
+.menu-course li {
+    padding: 15px 0;
+    border-bottom: 1px dashed #ccc;
+    font-weight: bold;
+    font-size: 1.1em;
+    display: flex;
+    justify-content: space-between;
+}
+
+.access-details dl {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    border-top: 1px solid #eee;
+}
+.access-details dt {
+    padding: 20px;
+    background-color: rgba(217, 140, 0, 0.1);
+    font-weight: bold;
+    color: var(--sub-color);
+    border-bottom: 1px solid #fff;
+}
+.access-details dd {
+    padding: 20px;
+    margin: 0;
+    background-color: #fff;
+    border-bottom: 1px solid #eee;
+}
+
+.map-placeholder {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+footer {
+    background-color: var(--footer-bg);
+    color: #aaa;
+    text-align: center;
+    padding: 60px 0;
+    margin-top: auto;
+}
+footer p {
+    margin: 8px 0;
+    font-size: 14px;
+}
+
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+    }
+    header nav ul {
+        margin-top: 15px;
+        justify-content: center;
+    }
+    header nav li {
+        margin: 0 10px;
+    }
+    
+    .media-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .feature-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .feature-grid .feature-item.highlight-item {
+        grid-column: auto;
+        max-width: 100%;
+    }
+
+    .concept-item, 
+    .concept-item.item-reverse,
+    .access-summary .access-content,
+    .access-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .concept-item .concept-image,
+    .concept-item .concept-text,
+    .access-summary .access-content img,
+    .access-summary .access-text,
+    .access-content img,
+    .access-content .access-text {
+        width: 100%;
+    }
+    
+    .access-details dl {
+        grid-template-columns: 1fr;
+    }
+    .access-details dt {
+        background-color: #eee;
+        border-bottom: none;
+    }
+    
+    .hero {
+        padding: 40px 20px;
+        margin-bottom: 40px;
+    }
+    .hero-catchphrase {
+        font-size: 22px;
+    }
+}
