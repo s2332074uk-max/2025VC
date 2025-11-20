@@ -1,1 +1,66 @@
 
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>BMI計算機</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        .input-group { margin-bottom: 10px; }
+        label { display: inline-block; width: 100px; }
+    </style>
+    <script>
+        function calcBMI() {
+            var heightCm = document.getElementById("height").value;
+            var weightKg = document.getElementById("weight").value;
+
+            if (heightCm == "" || weightKg == "") {
+                alert("身長と体重を入力してください");
+                return;
+            }
+
+            var heightM = heightCm / 100;
+            var bmi = weightKg / (heightM * heightM);
+            var result = bmi.toFixed(1);
+
+            document.getElementById("result_area").value = result;
+
+            var message = "";
+            if (bmi < 18.5) {
+                message = "低体重(痩せ型)";
+            } else if (bmi < 25) {
+                message = "普通体重";
+            } else {
+                message = "肥満(1度以上)";
+            }
+            document.getElementById("message_area").innerText = "判定: " + message;
+        }
+    </script>
+</head>
+<body>
+
+    <h1>健康管理: BMI計算</h1>
+    <p>身長と体重を入力してボタンを押してください。</p>
+
+    <form>
+        <div class="input-group">
+            <label for="height">身長 (cm):</label>
+            <input type="number" id="height" placeholder="例: 170">
+        </div>
+        <div class="input-group">
+            <label for="weight">体重 (kg):</label>
+            <input type="number" id="weight" placeholder="例: 60">
+        </div>
+
+        <input type="button" onclick="calcBMI()" value="計算する">
+        
+        <br><br>
+
+        <label for="result_area">BMI結果:</label>
+        <input type="text" id="result_area" readonly>
+    </form>
+
+    <h2 id="message_area" style="color: blue;"></h2>
+
+</body>
+</html>
