@@ -1,1 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Academic Assignment Single Page Website">
+    <title>Modern Responsive Assignment</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
 
+    <header class="navbar">
+        <div class="container">
+            <a href="#" class="logo">Brand<span>Name</span></a>
+            <nav>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="hamburger" id="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="container hero-content">
+                <h1>Create Digital Experiences</h1>
+                <p>A responsive, high-performance single-page website designed for academic excellence.</p>
+                <a href="#about" class="btn primary-btn">Learn More</a>
+            </div>
+        </section>
+
+        <section id="about" class="section-padding">
+            <div class="container about-wrapper">
+                <div class="about-text">
+                    <h2>About the Project</h2>
+                    <p>This website demonstrates proficiency in HTML structure and CSS styling. It utilizes modern layout techniques including Flexbox to ensure elements align correctly across different device sizes.</p>
+                    <p>The design focuses on readability, accessibility, and clean code standards.</p>
+                </div>
+                <div class="about-image">
+                    <img src="https://placehold.co/600x400/eee/31343C" alt="About section placeholder">
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="section-padding bg-light">
+            <div class="container">
+                <h2 class="section-title">Key Features</h2>
+                <div class="grid-cards">
+                    <div class="card">
+                        <i class="fas fa-mobile-alt"></i>
+                        <h3>Fully Responsive</h3>
+                        <p>Adapts seamlessly to mobile, tablet, and desktop screens using Media Queries.</p>
+                    </div>
+                    <div class="card">
+                        <i class="fas fa-code"></i>
+                        <h3>Clean Code</h3>
+                        <p>Written with semantic HTML5 tags and organized CSS variables.</p>
+                    </div>
+                    <div class="card">
+                        <i class="fas fa-rocket"></i>
+                        <h3>Performance</h3>
+                        <p>Optimized for fast loading with minimal external dependencies.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section-padding">
+            <div class="container contact-wrapper">
+                <h2 class="section-title">Get in Touch</h2>
+                <form class="contact-form" action="#" method="POST">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn secondary-btn">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Student Name. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
