@@ -1,105 +1,88 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Academic Assignment Single Page Website">
-    <title>Modern Responsive Assignment</title>
+    <title>ビジュアルコンテンツデザイン 第9回 課題</title>
+    
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
 
-    <header class="navbar">
-        <div class="container">
-            <a href="#" class="logo">Brand<span>Name</span></a>
-            <nav>
-                <ul class="nav-links" id="navLinks">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-                <div class="hamburger" id="hamburger">
-                    <i class="fas fa-bars"></i>
-                </div>
-            </nav>
+<header>
+    <h1>レスポンシブWebサイト</h1>
+    <p>ビジュアルコンテンツデザイン 第9回</p>
+</header>
+
+<div class="container">
+    <article class="main-content">
+        <h2>1. 動きの技法</h2>
+        [cite_start]<p>ここはメインコンテンツです。下のボタンにマウスを乗せると、色と大きさが変化します（マウスオーバー）。これはユーザーの注意を引くための基本的な動きです [cite: 65]。</p>
+        <button class="hover-btn">マウスを乗せてね</button>
+
+        <hr>
+
+        <h2>2. マルチメディアの埋め込み</h2>
+        [cite_start]<p>HTML5のタグを使用して、動画や音声を埋め込みます [cite: 402, 489]。</p>
+        
+        <p><strong>動画サンプル:</strong></p>
+        <video controls width="100%" style="background:#000; height:200px;">
+            <p>動画を再生するにはvideoタグ対応ブラウザが必要です。</p>
+        </video>
+
+        <p><strong>音声サンプル:</strong></p>
+        <audio controls style="width: 100%;">
+            <p>音声を再生するにはaudioタグ対応ブラウザが必要です。</p>
+        </audio>
+
+        <hr>
+
+        <h2>3. jQueryによるDOM操作</h2>
+        [cite_start]<p>ボタンをクリックすることで、要素の表示・非表示を切り替えます [cite: 664-703]。</p>
+        
+        <button id="btn1" class="hover-btn">表示する</button>
+        <button id="btn2" class="hover-btn" style="background-color: #dc3545;">隠す</button>
+
+        <div id="controlArea">
+            <p><strong>こんにちは！ jQueryです！</strong><br>
+            このエリアはjQueryによって制御されています。</p>
         </div>
-    </header>
 
-    <main>
-        <section id="home" class="hero">
-            <div class="container hero-content">
-                <h1>Create Digital Experiences</h1>
-                <p>A responsive, high-performance single-page website designed for academic excellence.</p>
-                <a href="#about" class="btn primary-btn">Learn More</a>
-            </div>
-        </section>
+    </article>
 
-        <section id="about" class="section-padding">
-            <div class="container about-wrapper">
-                <div class="about-text">
-                    <h2>About the Project</h2>
-                    <p>This website demonstrates proficiency in HTML structure and CSS styling. It utilizes modern layout techniques including Flexbox to ensure elements align correctly across different device sizes.</p>
-                    <p>The design focuses on readability, accessibility, and clean code standards.</p>
-                </div>
-                <div class="about-image">
-                    <img src="https://placehold.co/600x400/eee/31343C" alt="About section placeholder">
-                </div>
-            </div>
-        </section>
+    <aside class="sidebar">
+        <h3>サイドバー</h3>
+        <ul>
+            <li>メニュー1</li>
+            <li>メニュー2</li>
+            <li>メニュー3</li>
+        </ul>
+        [cite_start]<p>ウィンドウ幅を狭くする（スマホサイズにする）と、このサイドバーはメインコンテンツの下に移動します [cite: 582-594]。</p>
+    </aside>
+</div>
 
-        <section id="services" class="section-padding bg-light">
-            <div class="container">
-                <h2 class="section-title">Key Features</h2>
-                <div class="grid-cards">
-                    <div class="card">
-                        <i class="fas fa-mobile-alt"></i>
-                        <h3>Fully Responsive</h3>
-                        <p>Adapts seamlessly to mobile, tablet, and desktop screens using Media Queries.</p>
-                    </div>
-                    <div class="card">
-                        <i class="fas fa-code"></i>
-                        <h3>Clean Code</h3>
-                        <p>Written with semantic HTML5 tags and organized CSS variables.</p>
-                    </div>
-                    <div class="card">
-                        <i class="fas fa-rocket"></i>
-                        <h3>Performance</h3>
-                        <p>Optimized for fast loading with minimal external dependencies.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+<footer>
+    <p>© 2025 Visual Content Design Class</p>
+</footer>
 
-        <section id="contact" class="section-padding">
-            <div class="container contact-wrapper">
-                <h2 class="section-title">Get in Touch</h2>
-                <form class="contact-form" action="#" method="POST">
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name" placeholder="Your Name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" placeholder="Your Email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
-                    </div>
-                    <button type="submit" class="btn secondary-btn">Send Message</button>
-                </form>
-            </div>
-        </section>
-    </main>
+<script>
+    $(function(){
+        // 初期状態で隠しておく
+        $("#controlArea").hide();
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2023 Student Name. All Rights Reserved.</p>
-        </div>
-    </footer>
+        // 「表示する」ボタンをクリックした時
+        $("#btn1").on("click", function() {
+            $("#controlArea").show(); // 表示
+        });
 
-    <script src="script.js"></script>
+        // 「隠す」ボタンをクリックした時
+        $("#btn2").on("click", function() {
+            $("#controlArea").hide(); // 非表示
+        });
+    });
+</script>
+
 </body>
 </html>
