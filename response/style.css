@@ -1,79 +1,49 @@
-@charset "UTF-8";
+@charset "utf-8";
 
-/* ベースのスタイル */
 body {
-    font-family: sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f0f0f0;
-}
-header, footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 1em;
-}
-.container {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 20px;
+  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #f4f4f4;
+  color: #333;
 }
 
-/* メインコンテンツエリア */
-.main-content {
-    flex: 3; /* PCでは広く取る */
-    background-color: #fff;
-    padding: 20px;
-    margin-right: 20px;
+h1 {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
 }
 
-/* サイドバー (資料P.31: PCの場合のサイドバー) */
-.sidebar {
-    flex: 1; /* PCでは狭く取る */
-    background-color: #ddd;
-    padding: 20px;
+#accordion {
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-[cite_start]/* 動きの演出：マウスオーバー (資料P.6: マウスオーバーによる変化) [cite: 65-68] */
-.hover-btn {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
-    text-decoration: none;
-    transition: 0.3s; /* スムーズな変化 */
-    border: none;
-    cursor: pointer;
-}
-.hover-btn:hover {
-    background-color: #0056b3; /* 色の変化 */
-    transform: scale(1.1); /* 大きさの変化 */
+#accordion img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 10px auto;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-/* jQuery操作エリアの初期スタイル */
-#controlArea {
-    border: 2px solid red;
-    padding: 10px;
-    margin-top: 10px;
-    background-color: #ffe6e6;
+#accordion ul {
+  margin-top: 10px;
+  padding-left: 20px;
 }
 
-/* --- レスポンシブデザインの記述 --- */
-[cite_start]/* 資料P.32: ステップ(2) CSSファイルで指定する [cite: 597-599] */
-
-/* スマートフォン用レイアウト (480px以下) */
 @media screen and (max-width: 480px) {
-    .container {
-        flex-direction: column; /* 縦並びにする */
-    }
-    .main-content {
-        margin-right: 0;
-        margin-bottom: 20px;
-    }
-    .sidebar {
-        background-color: #ccc; /* スマホだと少し濃くしてみる */
-    }
-    header {
-        background-color: #555; /* スマホ用のヘッダー色 */
-    }
+  body {
+    padding: 10px;
+  }
+  
+  h1 {
+    font-size: 1.2rem;
+  }
+
+  .ui-accordion .ui-accordion-header {
+    padding: 1em;
+    font-size: 1rem;
+  }
 }
