@@ -1,88 +1,91 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ビジュアルコンテンツデザイン 第9回 課題</title>
-    
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>学食メニュー - jQuery UI Accordion</title>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/smoothness/jquery-ui.css">
+  <link rel="stylesheet" href="style.css">
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+
+  <script>
+  $(function() {
+    $( "#accordion" ).accordion({
+      collapsible: true,
+      heightStyle: "content",
+      active: 0
+    });
+  });
+  </script>
 </head>
 <body>
 
-<header>
-    <h1>レスポンシブWebサイト</h1>
-    <p>ビジュアルコンテンツデザイン 第9回</p>
-</header>
+<h1>本日の学食メニュー</h1>
 
-<div class="container">
-    <article class="main-content">
-        <h2>1. 動きの技法</h2>
-        [cite_start]<p>ここはメインコンテンツです。下のボタンにマウスを乗せると、色と大きさが変化します（マウスオーバー）。これはユーザーの注意を引くための基本的な動きです [cite: 65]。</p>
-        <button class="hover-btn">マウスを乗せてね</button>
+<div id="accordion">
+  <h3>日替わりランチ</h3>
+  <div>
+    <p>
+        本日のエ大ランチは「鶏の唐揚げ 南蛮ソース」です。<br>
+        ご飯とお味噌汁がついた定番セット。
+    </p>
+    <p>
+        <img src="lunch.jpg" alt="日替わりランチ: 鶏の唐揚げ">
+    </p>
+    <ul>
+      <li>価格: 300円</li>
+    </ul>
+  </div>
 
-        <hr>
+  <h3>本日のグルメカレー</h3>
+  <div>
+    <p>
+        チョリソー＆チーズカレー。<br>
+        ピリ辛のチョリソーとまろやかなチーズの相性が抜群です。
+    </p>
+    <p>
+        <img src="curry.jpg" alt="チョリソー＆チーズカレー">
+    </p>
+    <ul>
+      <li>価格: 350円</li>
+    </ul>
+  </div>
 
-        <h2>2. マルチメディアの埋め込み</h2>
-        [cite_start]<p>HTML5のタグを使用して、動画や音声を埋め込みます [cite: 402, 489]。</p>
-        
-        <p><strong>動画サンプル:</strong></p>
-        <video controls width="100%" style="background:#000; height:200px;">
-            <p>動画を再生するにはvideoタグ対応ブラウザが必要です。</p>
-        </video>
+  <h3>麺コーナー（うどん・そば）</h3>
+  <div>
+    <p>
+        唐揚げおろしうどん・そば。<br>
+        さっぱりとしたおろしと、ボリューム満点の唐揚げをトッピング。
+    </p>
+    <p>
+        <img src="karasoba.jpg" alt="唐揚げおろしそば">
+    </p>
+    <ul>
+      <li>唐揚げおろし: 300円</li>
+      <li>かけうどん・そば: 250円</li>
+      <li>カレーうどん・そば: 300円</li>
+    </ul>
+  </div>
 
-        <p><strong>音声サンプル:</strong></p>
-        <audio controls style="width: 100%;">
-            <p>音声を再生するにはaudioタグ対応ブラウザが必要です。</p>
-        </audio>
-
-        <hr>
-
-        <h2>3. jQueryによるDOM操作</h2>
-        [cite_start]<p>ボタンをクリックすることで、要素の表示・非表示を切り替えます [cite: 664-703]。</p>
-        
-        <button id="btn1" class="hover-btn">表示する</button>
-        <button id="btn2" class="hover-btn" style="background-color: #dc3545;">隠す</button>
-
-        <div id="controlArea">
-            <p><strong>こんにちは！ jQueryです！</strong><br>
-            このエリアはjQueryによって制御されています。</p>
-        </div>
-
-    </article>
-
-    <aside class="sidebar">
-        <h3>サイドバー</h3>
-        <ul>
-            <li>メニュー1</li>
-            <li>メニュー2</li>
-            <li>メニュー3</li>
-        </ul>
-        [cite_start]<p>ウィンドウ幅を狭くする（スマホサイズにする）と、このサイドバーはメインコンテンツの下に移動します [cite: 582-594]。</p>
-    </aside>
+  <h3>パスタ</h3>
+  <div>
+    <p>
+        カルボナーラ。<br>
+        濃厚なクリームソースが麺に絡みます。スープ付き。
+    </p>
+    <p>
+        <img src="supa.jpg" alt="カルボナーラ">
+    </p>
+    <ul>
+      <li>価格: 300円</li>
+      <li>※大盛りはできません</li>
+    </ul>
+  </div>
 </div>
-
-<footer>
-    <p>© 2025 Visual Content Design Class</p>
-</footer>
-
-<script>
-    $(function(){
-        // 初期状態で隠しておく
-        $("#controlArea").hide();
-
-        // 「表示する」ボタンをクリックした時
-        $("#btn1").on("click", function() {
-            $("#controlArea").show(); // 表示
-        });
-
-        // 「隠す」ボタンをクリックした時
-        $("#btn2").on("click", function() {
-            $("#controlArea").hide(); // 非表示
-        });
-    });
-</script>
 
 </body>
 </html>
